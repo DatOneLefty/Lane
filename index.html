@@ -1,7 +1,5 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
  <script src='external.js'></script>
   <style>
   #left {
@@ -177,13 +175,13 @@ $(window).keydown(function(evt) {
   }
 });
 
-$("#left").mousedown(function() {
+$("#left").on('mousedown touchstart', function(){
      moveLeft = true;
  });
-$("#right").mousedown(function() {
+ $("#right").on('mousedown touchstart', function(){
      moveRight = true;
  });
-$(document).mouseup(function() {
+ $(document).on('mouseup touchend', function(){
      moveLeft = false;
  moveRight = false;
  });
