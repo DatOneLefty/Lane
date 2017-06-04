@@ -2,6 +2,25 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script src='external.js'></script>
   <style>
+  #left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,255,0.0); /*dim the background*/
+}
+
+#right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(255,0,0,0.0); /*dim the background*/
+}
   body {
     padding: 0;
     margin: 0;
@@ -19,6 +38,8 @@
   <title>Lane</title>
 </head>
 <body>
+  <div id='left'></div>
+  <div id='right'></div>
   <div id='score'></div>
   <canvas id='game'></canvas>
 </body>
@@ -153,6 +174,18 @@ $(window).keydown(function(evt) {
     moveRight = false;
   }
 });
+
+$("#left").on('vmousedown', function(){
+     moveLeft = true;
+ });
+ $("#right").on('vmousedown', function(){
+     moveRight = true;
+ });
+ $(document).on('vmouseup', function(){
+     moveLeft = false;
+ moveRight = false;
+ });
+
 
 var interval = setInterval(gameLoop, 10);
 </script>
