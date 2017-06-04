@@ -175,13 +175,13 @@ $(window).keydown(function(evt) {
   }
 });
 
-$("#left").on('vmousedown', function(){
+$("#left").mousedown(function() {
      moveLeft = true;
  });
- $("#right").on('vmousedown', function(){
+$("#right").mousedown(function() {
      moveRight = true;
  });
- $(document).on('vmouseup', function(){
+$(document).mouseup(function() {
      moveLeft = false;
  moveRight = false;
  });
